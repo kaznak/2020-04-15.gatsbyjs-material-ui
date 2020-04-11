@@ -21,5 +21,8 @@ module.exports = {
         // Add any options here
       },
     },
+    `gatsby-plugin-react-helmet`,
+    // local plugin
+    `gatsby-plugin-top-layout`,
   ],
 }
