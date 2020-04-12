@@ -3,7 +3,7 @@ import Container from "@material-ui/core/Container"
 import Typography from "@material-ui/core/Typography"
 import Box from "@material-ui/core/Box"
 import ProTip from "../components/ProTip"
-import Link from "../components/Link"
+import Link from "../components/core/Link"
 import Copyright from "../components/Copyright"
 
 export default function Index() {
