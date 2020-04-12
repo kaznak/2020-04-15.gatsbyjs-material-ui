@@ -1,10 +1,11 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import Link from "@material-ui/core/Link"
-import SvgIcon from "@material-ui/core/SvgIcon"
+// import SvgIcon from "@material-ui/core/SvgIcon"
 import Typography from "@material-ui/core/Typography"
 import Icon from "@material-ui/core/Icon"
 
+/*
 function LightBulbIcon(props) {
   return (
     <SvgIcon {...props}>
@@ -12,8 +13,8 @@ function LightBulbIcon(props) {
     </SvgIcon>
   )
 }
+*/
 
-/*
 const useStyles = makeStyles(theme => ({
   root: {
     margin: theme.spacing(6, 0, 3),
@@ -23,7 +24,6 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(1),
   },
 }))
-*/
 
 export default function ProTip() {
   const classes = useStyles()
