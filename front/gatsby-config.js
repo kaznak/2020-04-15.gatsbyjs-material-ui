@@ -22,7 +22,5 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    // local plugin
-    `gatsby-plugin-top-layout`,
   ],
 }
