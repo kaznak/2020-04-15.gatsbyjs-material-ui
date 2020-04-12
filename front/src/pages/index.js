@@ -16,6 +16,9 @@ export default function Index() {
         <Link to="/about" color="secondary">
           Go to the about page
         </Link>
+        <Link to="/appshell" color="secondary">
+          Go to the appshell page
+        </Link>
         <ProTip />
         <Copyright />
       </Box>
