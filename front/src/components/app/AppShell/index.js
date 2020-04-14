@@ -156,11 +156,11 @@ export default function AppShell(props) {
         }}
         open={open}
       >
-        <div className={classes.toolbarIcon} onClick={handleDrawerClose}>
+        <List className={classes.toolbarIcon} onClick={handleDrawerClose}>
           <IconButton>
             <ChevronLeftIcon />
           </IconButton>
-        </div>
+        </List>
         <Divider />
         <List>{mainListItems}</List>
         <Divider />
