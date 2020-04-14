@@ -39,19 +39,13 @@ function listItems(listSection) {
   const items = listSection.items
   return (
     <React.Fragment>
-      {title !== undefined ? (
-        <ListSubheader inset>{title}</ListSubheader>
-      ) : (
-        <React.Fragment></React.Fragment>
-      )}
-      {items.map((value, index) => {
-        return (
-          <ListItem button key={index}>
-            <ListItemIcon>{React.createElement(value.icon)}</ListItemIcon>
-            <ListItemText primary={value.name} />
-          </ListItem>
-        )
-      })}
+      {title && <ListSubheader inset>{title}</ListSubheader>}
+      {items.map((value, index) => (
+        <ListItem button key={index}>
+          <ListItemIcon>{React.createElement(value.icon)}</ListItemIcon>
+          <ListItemText primary={value.name} />
+        </ListItem>
+      ))}
     </React.Fragment>
   )
 }
