@@ -8,9 +8,15 @@ import Drawer from "@material-ui/core/Drawer"
 import Box from "@material-ui/core/Box"
 import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
-import List from "@material-ui/core/List"
-import Typography from "@material-ui/core/Typography"
+
 import Divider from "@material-ui/core/Divider"
+import List from "@material-ui/core/List"
+import ListItem from "@material-ui/core/ListItem"
+import ListItemIcon from "@material-ui/core/ListItemIcon"
+import ListItemText from "@material-ui/core/ListItemText"
+import ListSubheader from "@material-ui/core/ListSubheader"
+
+import Typography from "@material-ui/core/Typography"
 import IconButton from "@material-ui/core/IconButton"
 import Badge from "@material-ui/core/Badge"
 import Container from "@material-ui/core/Container"
@@ -18,7 +24,6 @@ import Grid from "@material-ui/core/Grid"
 import MenuIcon from "@material-ui/icons/Menu"
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft"
 import NotificationsIcon from "@material-ui/icons/Notifications"
-import { mainListItems, secondaryListItems } from "./listItems"
 
 import Copyright from "../Copyright"
 
@@ -103,6 +108,22 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
+function makeListItems(listSection) {
+  const title = listSection.title
+  const items = listSection.items
+  return (
+    <React.Fragment>
+      {title && <ListSubheader inset>{title}</ListSubheader>}
+      {items.map((value, index) => (
+        <ListItem button key={index}>
+          <ListItemIcon>{React.createElement(value.icon)}</ListItemIcon>
+          <ListItemText primary={value.name} />
+        </ListItem>
+      ))}
+    </React.Fragment>
+  )
+}
+
 export default function AppShell(props) {
   const classes = useStyles()
   const [open, setOpen] = React.useState(false)
@@ -161,10 +182,10 @@ export default function AppShell(props) {
             <ChevronLeftIcon />
           </IconButton>
         </List>
-        <Divider />
-        <List>{mainListItems}</List>
-        <Divider />
-        <List>{secondaryListItems}</List>
+        {props.menuItems.flatMap((e, i) => [
+          <Divider key={2 * i} />,
+          <List key={2 * i + 1}>{makeListItems(e)}</List>,
+        ])}
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
@@ -183,4 +204,5 @@ export default function AppShell(props) {
 
 AppShell.propTypes = {
   children: PropTypes.node,
+  menuItems: PropTypes.array,
 }
